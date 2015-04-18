@@ -182,9 +182,9 @@
         (funcall ins-func)
         (goto-char (point-min))
         (if (not fontify)
-            (turn-off-haskell-font-lock)
+            (font-lock-mode -1) ;; turn-off-haskell-font-lock has been removed
           (haskell-font-lock-defaults-create)
-          (turn-on-haskell-font-lock)))
+          (turn-on-font-lock))) ;; turn-on-haskell-font-lock has been removed
       (display-buffer buf
         '((display-buffer-reuse-window
            display-buffer-pop-up-window))))))
